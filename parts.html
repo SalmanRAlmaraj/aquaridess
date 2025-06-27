@@ -47,11 +47,14 @@
 
     nav {
       margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
     }
 
     nav a {
       color: #00d4ff;
-      margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
     }
@@ -66,6 +69,17 @@
       font-size: 2.5rem;
       margin-bottom: 2rem;
       color: #00d4ff;
+    }
+
+    .currency-selector {
+      margin-bottom: 2rem;
+    }
+
+    .currency-selector select {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
     }
 
     .parts-grid {
@@ -91,6 +105,13 @@
     .part p {
       font-size: 0.95rem;
       line-height: 1.5;
+    }
+
+    .price {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #ffffff;
     }
 
     footer {
@@ -124,22 +145,36 @@
 
   <section class="main">
     <h1>High-Performance Parts</h1>
+
+    <div class="currency-selector">
+      <label for="currency">Choose Currency: </label>
+      <select id="currency" onchange="changeCurrency(this.value)">
+        <option value="USD">USD ($)</option>
+        <option value="BHD">BHD (د.ب)</option>
+        <option value="EUR">EUR (€)</option>
+      </select>
+    </div>
+
     <div class="parts-grid">
       <div class="part">
         <h3>Battery Pack</h3>
         <p>Durable, waterproof lithium-ion battery built for high capacity and extended ride times.</p>
+        <div class="price" data-usd="499">Loading...</div>
       </div>
       <div class="part">
         <h3>Jet Motor 6000W</h3>
         <p>Efficient and powerful jet propulsion unit designed for smooth aquatic acceleration.</p>
+        <div class="price" data-usd="699">Loading...</div>
       </div>
       <div class="part">
         <h3>Electronic Speed Controller (ESC)</h3>
         <p>Precision control with real-time thermal protection and Bluetooth tuning support.</p>
+        <div class="price" data-usd="329">Loading...</div>
       </div>
       <div class="part">
         <h3>Remote Control</h3>
         <p>Ergonomic waterproof handheld controller for seamless throttle and direction control.</p>
+        <div class="price" data-usd="129">Loading...</div>
       </div>
     </div>
   </section>
@@ -147,5 +182,30 @@
   <footer>
     <p>&copy; 2025 AquaRide. All rights reserved.</p>
   </footer>
+
+  <script>
+    const rates = {
+      USD: 1,
+      BHD: 0.377,
+      EUR: 0.92
+    };
+
+    const symbols = {
+      USD: "$",
+      BHD: "د.ب",
+      EUR: "€"
+    };
+
+    function changeCurrency(currency) {
+      document.querySelectorAll(".price").forEach(el => {
+        const baseUSD = parseFloat(el.dataset.usd);
+        const converted = (baseUSD * rates[currency]).toFixed(2);
+        el.textContent = `${symbols[currency]} ${converted}`;
+      });
+    }
+
+    // Default on load
+    changeCurrency("USD");
+  </script>
 </body>
 </html>
