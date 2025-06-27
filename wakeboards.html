@@ -46,12 +46,15 @@
     }
 
     nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
       margin-top: 0.5rem;
     }
 
     nav a {
       color: #00d4ff;
-      margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
     }
@@ -66,6 +69,17 @@
       font-size: 2.5rem;
       margin-bottom: 2rem;
       color: #00d4ff;
+    }
+
+    .currency-selector {
+      margin-bottom: 2rem;
+    }
+
+    .currency-selector select {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
     }
 
     .board-grid {
@@ -91,6 +105,13 @@
     .board p {
       font-size: 0.95rem;
       line-height: 1.5;
+    }
+
+    .price {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: white;
     }
 
     footer {
@@ -124,18 +145,31 @@
 
   <section class="main">
     <h1>Electric Wakeboards</h1>
+
+    <div class="currency-selector">
+      <label for="currency">Choose Currency: </label>
+      <select id="currency" onchange="changeCurrency(this.value)">
+        <option value="USD">USD ($)</option>
+        <option value="BHD">BHD (د.ب)</option>
+        <option value="EUR">EUR (€)</option>
+      </select>
+    </div>
+
     <div class="board-grid">
       <div class="board">
         <h3>AquaBlade X1</h3>
         <p>Lightweight carbon fiber body with agile handling and top speeds up to 55 km/h.</p>
+        <div class="price" data-usd="1149">Loading...</div>
       </div>
       <div class="board">
         <h3>WaveRunner Pro</h3>
         <p>Stability and control optimized for beginners and smooth riders alike.</p>
+        <div class="price" data-usd="849">Loading...</div>
       </div>
       <div class="board">
         <h3>HydroVolt Ultra</h3>
         <p>Performance-tuned electric wakeboard built for big waves and competitive rides.</p>
+        <div class="price" data-usd="1399">Loading...</div>
       </div>
     </div>
   </section>
@@ -143,5 +177,30 @@
   <footer>
     <p>&copy; 2025 AquaRide. All rights reserved.</p>
   </footer>
+
+  <script>
+    const rates = {
+      USD: 1,
+      BHD: 0.377,
+      EUR: 0.92
+    };
+
+    const symbols = {
+      USD: "$",
+      BHD: "د.ب",
+      EUR: "€"
+    };
+
+    function changeCurrency(currency) {
+      document.querySelectorAll(".price").forEach(el => {
+        const baseUSD = parseFloat(el.dataset.usd);
+        const converted = (baseUSD * rates[currency]).toFixed(2);
+        el.textContent = `${symbols[currency]} ${converted}`;
+      });
+    }
+
+    // Set default on page load
+    changeCurrency("USD");
+  </script>
 </body>
 </html>
