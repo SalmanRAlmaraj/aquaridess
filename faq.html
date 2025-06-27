@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ - AquaRide</title>
+  <title>AquaRide - Our Team</title>
   <link rel="icon" href="favicon.ico" />
-  <meta name="description" content="Frequently Asked Questions about AquaRide products, orders, and electric surfboard features." />
+  <meta name="description" content="Meet the AquaRide team – engineers, designers, and riders united by a passion for innovation on water." />
   <style>
     * {
       margin: 0;
@@ -68,31 +68,28 @@
       color: #00d4ff;
     }
 
-    details {
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .member {
       background: rgba(255, 255, 255, 0.1);
-      margin: 1rem auto;
-      padding: 1rem 1.5rem;
-      max-width: 800px;
-      border-radius: 10px;
-      text-align: left;
+      padding: 1.5rem;
+      border-radius: 12px;
       backdrop-filter: blur(6px);
     }
 
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1.1rem;
+    .member h3 {
+      margin-bottom: 0.3rem;
       color: #00d4ff;
-      margin-bottom: 0.5rem;
     }
 
-    details[open] summary {
-      margin-bottom: 0.8rem;
-    }
-
-    p {
+    .member p {
       font-size: 0.95rem;
-      line-height: 1.6;
     }
 
     footer {
@@ -104,11 +101,7 @@
         font-size: 1.8rem;
       }
 
-      summary {
-        font-size: 1rem;
-      }
-
-      p {
+      .member p {
         font-size: 0.9rem;
       }
     }
@@ -129,32 +122,21 @@
   </header>
 
   <section class="main">
-    <h1>Frequently Asked Questions</h1>
-
-    <details>
-      <summary>What is AquaRide?</summary>
-      <p>AquaRide is a brand dedicated to electric water sports, offering high-performance wakeboards and components built for thrill, safety, and innovation.</p>
-    </details>
-
-    <details>
-      <summary>How long does shipping take?</summary>
-      <p>Shipping usually takes 5–10 business days depending on your region. You will receive tracking updates by email once your order is shipped.</p>
-    </details>
-
-    <details>
-      <summary>Do you ship internationally?</summary>
-      <p>Yes! We ship worldwide. Shipping times and fees may vary. Please check during checkout or contact support for details about your location.</p>
-    </details>
-
-    <details>
-      <summary>Can I return my order?</summary>
-      <p>You can return unused products within 30 days of delivery. Visit our return policy page or contact us for further help.</p>
-    </details>
-
-    <details>
-      <summary>Are AquaRide boards waterproof?</summary>
-      <p>Yes, our boards and electronics are fully waterproof and sealed for marine use. Just remember to rinse with fresh water after saltwater rides!</p>
-    </details>
+    <h1>Meet the AquaRide Team</h1>
+    <div class="team-grid">
+      <div class="member">
+        <h3>Salman Al Maraj</h3>
+        <p>Chief Engineer – Creator of AquaRide’s electric thruster tech and battery innovations.</p>
+      </div>
+      <div class="member">
+        <h3>Yousif Alammadi</h3>
+        <p>Marketing Lead – Brings the AquaRide story to life across oceans and socials.</p>
+      </div>
+      <div class="member">
+        <h3>Mohammed Sharif</h3>
+        <p>Lead Designer – Passionate about performance and minimalism on the water.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
