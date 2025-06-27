@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - AquaRide</title>
+  <link rel="icon" href="favicon.ico" />
+  <meta name="description" content="Get in touch with AquaRide – we’re here to help you ride the waves!" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=1600') no-repeat center center / cover;
+      z-index: -1;
+    }
+
+    header, footer {
+      background-color: rgba(0, 0, 50, 0.5);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    header h2 {
+      font-size: 2.5rem;
+    }
+
+    header h2 a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: #00d4ff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .main {
+      padding: 4rem 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #00d4ff;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background-color: #00d4ff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #009acb;
+    }
+
+    footer {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .main h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+
+  <header>
+    <h2><a href="index.html">🏄‍♂️ AquaRide</a></h2>
+    <nav>
+      <a href="wakeboards.html">Wakeboards</a>
+      <a href="parts.html">Parts</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="main">
+    <h1>Contact Us</h1>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AquaRide. All rights reserved.</p>
+  </footer>
+</body>
+</html>

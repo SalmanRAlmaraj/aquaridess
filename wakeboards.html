@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaRide - Wakeboards</title>
+  <link rel="icon" href="favicon.ico" />
+  <meta name="description" content="Discover AquaRide's cutting-edge electric wakeboards built for speed, stability, and thrill." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=1600') no-repeat center center / cover;
+      z-index: -1;
+    }
+
+    header, footer {
+      background-color: rgba(0, 0, 50, 0.5);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    header h2 {
+      font-size: 2.5rem;
+    }
+
+    header h2 a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: #00d4ff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .main {
+      padding: 4rem 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #00d4ff;
+    }
+
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .board {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+    }
+
+    .board h3 {
+      margin-bottom: 0.5rem;
+      color: #00d4ff;
+    }
+
+    .board p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .main h1 {
+        font-size: 1.8rem;
+      }
+
+      .board p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+
+  <header>
+    <h2><a href="index.html">🏄‍♂️ AquaRide</a></h2>
+    <nav>
+      <a href="wakeboards.html">Wakeboards</a>
+      <a href="parts.html">Parts</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="main">
+    <h1>Electric Wakeboards</h1>
+    <div class="board-grid">
+      <div class="board">
+        <h3>AquaBlade X1</h3>
+        <p>Lightweight carbon fiber body with agile handling and top speeds up to 55 km/h.</p>
+      </div>
+      <div class="board">
+        <h3>WaveRunner Pro</h3>
+        <p>Stability and control optimized for beginners and smooth riders alike.</p>
+      </div>
+      <div class="board">
+        <h3>HydroVolt Ultra</h3>
+        <p>Performance-tuned electric wakeboard built for big waves and competitive rides.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AquaRide. All rights reserved.</p>
+  </footer>
+</body>
+</html>
